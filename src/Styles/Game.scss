@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kalam:wght@300;400;700&display=swap');
+
+$mobile : 555px;
+$desktop: 820px;
+$indie: 'Indie Flower', cursive;
+$kalam: 'Kalam', cursive;
+
+
+body{
+    text-align: center;
+    font-family: $kalam;
+    height: 90vh;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+}
+
+.hide{
+    color: transparent;
+}
+
+.secret{
+    font-family: $indie;
+}
+
+.imagem{
+    display: flex;
+    margin: 1rem auto;
+    height: 300px;
+}
+
+.game-area{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .keyboard{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-gap: 5px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid transparent;
+        border-radius: 10px;
+
+        button {
+            background-color: transparent;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-family: $indie;
+            font-weight: bolder;
+        }
+        
+        button:hover {
+            background-color: gainsboro;
+            transform: scale(1.1);
+        }
+    }
+
+    @media (min-width: $desktop) {
+        
+        .imagem{
+            display: flex;
+            margin: 1rem auto;
+            height: 350px;
+        }
+        
+        .keyboard{
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .imagem{
+            width: 150px;
+            height: 300px;
+        }
+
+        font-size: 10px;
+
+        .keyboard{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+        }
+      }
+}
+
+button{
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: gainsboro;
+    box-shadow: 1px 1px 5px gainsboro;
+}
